@@ -52,10 +52,6 @@ variable "cluster_map_roles" {
       username = "admin:{{SessionName}}"
       groups   = ["system:masters"]
     }
-    ReadOnlyAccess = {
-      username = "ro:{{SessionName}}"
-      groups   = ["system:authenticated"]
-    }
   }
 }
 
@@ -260,7 +256,7 @@ variable "cluster_managed_node_groups" {
     system-01 = {
       min_size         = 1
       desired_capacity = 1
-      max_size         = 5
+      max_size         = 10
       volume_size      = 100
       instance_type    = "t3.medium"
       capacity_type    = "ON_DEMAND"
